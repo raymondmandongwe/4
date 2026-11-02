@@ -497,12 +497,6 @@ main { min-height: 55vh; }
   .contact-service { grid-template-columns: 92px minmax(0, 1fr); }
 }
 
-.story-route .announcement { display: none; }
-.story-route .site-header { min-height: 100px; grid-template-columns: auto 1fr auto; padding-inline: 6.1vw; background: rgba(250,244,239,.94); }
-.story-route .primary-nav { justify-self: end; gap: 28px; margin-right: clamp(18px, 2.5vw, 34px); }
-.story-route .primary-nav a { font-size: 9px; letter-spacing: .12em; text-transform: uppercase; }
-.story-route .search-toggle { display: none; }
-.story-route .bag-label { display: inline; }
 .story-route .story-editorial { display: grid; width: 100%; max-width: none; grid-template-columns: minmax(0, 41.2%) minmax(0, 1fr); align-items: stretch; gap: 0; min-height: 725px; margin: 0; padding: 0 0 0 6.25%; }
 .story-hero-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding-right: 28px; transform: translateY(7px); }
 .story-kicker { margin: 0 0 69px; color: var(--ink); font-size: 10px; font-weight: 600; letter-spacing: .2em; text-transform: uppercase; }
@@ -526,15 +520,9 @@ main { min-height: 55vh; }
 @media (max-width: 900px) {
   .story-route .story-editorial { grid-template-columns: minmax(0, 41.2%) minmax(0, 1fr); min-height: 590px; }
   .story-route .story-hero-copy h1 { font-size: 56px; }
-  .story-route .primary-nav { gap: 16px; margin-right: 14px; }
 }
 
 @media (max-width: 680px) {
-  .story-route .site-header { min-height: 70px; grid-template-columns: 44px 1fr 70px; padding-inline: 16px; }
-  .story-route .wordmark { justify-self: center; }
-  .story-route .bag-label { display: none; }
-  .story-route .primary-nav { top: 70px; left: 0; right: 0; justify-self: initial; gap: 0; margin: 0; }
-  .story-route .primary-nav.is-open { display: flex; }
   .story-route .story-editorial { grid-template-columns: 1fr; gap: 24px; min-height: 0; padding: 39px 24px 0; }
   .story-route .story-hero-copy { padding-right: 0; transform: none; }
   .story-route .story-hero-copy h1 { font-size: 49px; line-height: .96; }
