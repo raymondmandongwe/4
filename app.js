@@ -208,6 +208,15 @@ function renderCart() {
 
 function renderStory() {
   app.innerHTML = `<section class="collection-intro container"><p class="eyebrow">Our story · Est. 2020</p><h1 class="page-title">Crafted with<br>heart and sole.</h1></section><section class="story-band"><div class="story-image"><img src="${imageBase}the-lynux-6.jpg" alt="Lynux Espadrilles" fetchpriority="high"></div><div class="story-copy"><p class="eyebrow">Who we are</p><h2>Made just for you.</h2><p>Founded in 2020, Lynux Espadrilles is a South African luxury footwear brand dedicated to the art of handcrafted espadrilles. Each pair is made to order, reflecting our commitment to quality and individuality.</p><p>Inspired by the timeless elegance of French and Spanish shoe-making traditions, we bring Mediterranean craftsmanship to South Africa. Our designs blend classic espadrille style with modern comfort.</p><div class="story-note">“Luxury, comfort, customisable”</div></div></section><section class="featured-section container"><div class="section-heading"><p class="eyebrow">The Lynux promise</p><h2>Comfort in every way.</h2></div><div class="ticker"><span><i>✳</i> Handcrafted quality</span><span><i>✳</i> Made to order</span><span><i>✳</i> Free defect exchange</span><span><i>✳</i> R65 flat delivery</span></div></section>`;
+  document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "story"));
+}
+
+function renderContact() {
+  app.innerHTML = `<section class="collection-intro"><div class="container"><h1 class="page-title">Get in touch</h1><p>Contact Lynux Espadrilles</p></div></section>
+    <section class="contact-page container"><div class="contact-copy"><p class="eyebrow">Contact</p><h2>We’re here to help.</h2><p>For questions about a style, an order, or an exchange, contact Lynux through one of the channels below.</p><a class="button" href="mailto:info@lynuxespadrilles.co.za">Email Lynux <span aria-hidden="true">→</span></a></div>
+      <div class="contact-methods"><a class="contact-method" href="mailto:info@lynuxespadrilles.co.za"><span class="contact-label">Email</span><span>info@lynuxespadrilles.co.za</span><span aria-hidden="true">↗</span></a><a class="contact-method" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer"><span class="contact-label">Instagram</span><span>@lynux_espadrille</span><span aria-hidden="true">↗</span></a><a class="contact-method" href="https://wa.me/27786678552" target="_blank" rel="noreferrer"><span class="contact-label">WhatsApp</span><span>Chat with us</span><span aria-hidden="true">↗</span></a>
+        <div class="contact-service"><span class="contact-label">Delivery</span><strong>R65 flat-rate delivery</strong><span>South Africa</span></div><div class="contact-service"><span class="contact-label">Returns &amp; exchanges</span><span>Free exchange for manufacturing defects.</span><a class="text-link" href="https://lynuxespadrilles.co.za/returns/" target="_blank" rel="noreferrer">Read the policy ↗</a></div></div></section>`;
+  document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "contact"));
 }
 
 function renderNotFound() {
@@ -227,11 +236,10 @@ function route() {
   else if (routeValue === "shop") renderShop();
   else if (routeValue === "cart") renderCart();
   else if (routeValue === "story") renderStory();
-  else if (routeValue === "contact") renderHome();
+  else if (routeValue === "contact") renderContact();
   else renderHome();
   updateBagCount();
-  if (routeValue === "contact") requestAnimationFrame(() => document.querySelector("#contact").scrollIntoView());
-  else window.scrollTo({ top: 0, behavior: "instant" });
+  window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 document.querySelector("#menu-toggle").addEventListener("click", event => {
