@@ -206,7 +206,7 @@ function renderCart() {
 }
 
 function renderStory() {
-  app.innerHTML = `<section class="story-editorial container"><div class="story-hero-copy"><p class="story-kicker">Our Story</p><h1>A journey<br>rooted in<br>craftsmanship.</h1><p class="story-intro">Lynux Espadrilles was born from a simple idea — to create timeless footwear that blends effortless style with exceptional craftsmanship.</p></div><div class="story-hero-image"><img src="redesing-reference/ourstoryredesign.png/ourstoryredesing.png.png" alt="Lynux orange espadrilles worn on patterned steps" fetchpriority="high"></div></section>
+  app.innerHTML = `<section class="story-editorial container"><div class="story-hero-copy"><p class="story-kicker">Our Story</p><h1>A journey<br>rooted in<br>craftsmanship.</h1><p class="story-intro">Lynux Espadrilles was born from a simple idea — to create timeless footwear that blends effortless style with exceptional craftsmanship.</p></div><div class="story-hero-image"><img src="story-images/orange-espadrilles.png" alt="Orange Lynux espadrilles worn on patterned steps" fetchpriority="high"></div></section>
     <section class="story-philosophy"><p class="story-kicker">Our Philosophy</p><h2>Comfort, beauty<br>and purpose.</h2><p>We believe great design should feel effortless. Our espadrilles are made to accompany you — from sunlit escapes to everyday moments.</p></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "story"));
 }

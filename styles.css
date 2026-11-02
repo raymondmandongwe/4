@@ -510,7 +510,7 @@ main { min-height: 55vh; }
 .story-hero-copy h1 { margin: 0; color: var(--ink); font-family: var(--serif); font-size: 70px; font-weight: 500; line-height: 1.02; }
 .story-intro { max-width: 390px; margin: 45px 0 0; color: var(--muted); font-size: 14px; line-height: 1.8; }
 .story-hero-image { position: relative; width: 100%; aspect-ratio: .83; align-self: stretch; overflow: hidden; background: #f2e8df; }
-.story-hero-image img { position: absolute; top: -12%; left: -82%; width: 182%; max-width: none; height: auto; object-fit: initial; }
+.story-hero-image img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center; }
 .story-philosophy { display: flex; flex-direction: column; align-items: center; padding: 72px 22px 155px; text-align: center; }
 .story-philosophy .story-kicker { margin-bottom: 0; }
 .story-philosophy .story-kicker::after { width: 118px; margin: 20px auto 0; }
