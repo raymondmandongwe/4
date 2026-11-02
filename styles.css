@@ -405,6 +405,7 @@ main { min-height: 55vh; }
 .footer-column a:hover { color: var(--white); }
 .footer-bottom { border-color: #4a423b; }
 .preview-notice { border-color: #d8c6b8; background: #f8f0ea; }
+.home-route .footer-contact { display: none; }
 
 @media (min-width: 1440px) {
   .hero { height: 555px; }
