@@ -206,7 +206,8 @@ function renderCart() {
 }
 
 function renderStory() {
-  app.innerHTML = `<section class="collection-intro container"><p class="eyebrow">Our story · Est. 2020</p><h1 class="page-title">Crafted with<br>heart and sole.</h1></section><section class="story-band"><div class="story-image"><img src="${imageBase}the-lynux-6.jpg" alt="Lynux Espadrilles" fetchpriority="high"></div><div class="story-copy"><p class="eyebrow">Who we are</p><h2>Made just for you.</h2><p>Founded in 2020, Lynux Espadrilles is a South African luxury footwear brand dedicated to the art of handcrafted espadrilles. Each pair is made to order, reflecting our commitment to quality and individuality.</p><p>Inspired by the timeless elegance of French and Spanish shoe-making traditions, we bring Mediterranean craftsmanship to South Africa. Our designs blend classic espadrille style with modern comfort.</p><div class="story-note">“Luxury, comfort, customisable”</div></div></section><section class="featured-section container"><div class="section-heading"><p class="eyebrow">The Lynux promise</p><h2>Comfort in every way.</h2></div><div class="ticker"><span><i>✳</i> Handcrafted quality</span><span><i>✳</i> Made to order</span><span><i>✳</i> Free defect exchange</span><span><i>✳</i> R65 flat delivery</span></div></section>`;
+  app.innerHTML = `<section class="story-editorial container"><div class="story-hero-copy"><p class="story-kicker">Our Story</p><h1>A journey<br>rooted in<br>craftsmanship.</h1><p class="story-intro">Lynux Espadrilles was born from a simple idea — to create timeless footwear that blends effortless style with exceptional craftsmanship.</p></div><div class="story-hero-image"><img src="${imageBase}lucia-wedge.png" alt="Leopard-print Lynux espadrille" fetchpriority="high"></div></section>
+    <section class="story-philosophy"><p class="story-kicker">Our Philosophy</p><h2>Comfort, beauty<br>and purpose.</h2><p>We believe great design should feel effortless. Our espadrilles are made to accompany you — from sunlit escapes to everyday moments.</p></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "story"));
 }
 
@@ -225,6 +226,7 @@ function renderNotFound() {
 function route() {
   const routeValue = location.hash.replace(/^#\/?/, "");
   document.body.classList.toggle("home-route", routeValue === "" || routeValue === "home");
+  document.body.classList.toggle("story-route", routeValue === "story");
   document.querySelector("#primary-nav").classList.remove("is-open");
   document.querySelector("#menu-toggle").setAttribute("aria-expanded", "false");
   if (routeValue !== "shop") {
