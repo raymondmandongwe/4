@@ -40,11 +40,11 @@ function updateBagCount() {
   document.querySelector(".bag-link").setAttribute("aria-label", `Shopping bag, ${count} ${count === 1 ? "item" : "items"}`);
 }
 
-function card(product) {
+function card(product, prioritizeImage = false) {
   const colors = product.colors.slice(0, 5).map(color => `<span class="swatch-dot" title="${color}" style="background:${colorValue(color)}"></span>`).join("");
   return `<article class="product-card">
     <a class="product-image-link" href="#product/${product.slug}" aria-label="View ${product.name}">
-      <img src="${imageBase}${product.image}" alt="${product.name}" loading="lazy" decoding="async">
+      <img src="${imageBase}${product.image}" alt="${product.name}" loading="${prioritizeImage ? "eager" : "lazy"}" decoding="async"${prioritizeImage ? " fetchpriority=\"high\"" : ""}>
       <span class="image-label">View the style</span>
     </a>
     <div class="product-meta"><div><h3>${product.name}</h3><p>${priceLabel(product)}</p></div><div class="swatch-dots" aria-label="${product.colors.length} ${product.colors.length === 1 ? "colour" : "colours"}">${colors}</div></div>
@@ -66,18 +66,18 @@ function colorValue(color) {
 
 function renderHome() {
   app.innerHTML = `<section class="hero">
-    <div class="hero-copy"><p class="eyebrow">Handcrafted in South Africa</p><h1>Timeless Style.<br>Effortless Comfort.</h1><p>Luxury espadrilles handcrafted with French and Spanish inspiration. Comfort in every way.</p><div class="hero-actions"><a class="button" href="#shop">Shop the collection <span aria-hidden="true">↗</span></a><a class="text-link" href="#story">Discover our story</a></div></div>
-    <div class="hero-image"><img src="${imageBase}1000038200.jpg" alt="Lynux espadrilles lifestyle" fetchpriority="high"><span class="hero-caption">Made just for you</span></div>
+    <div class="hero-image"><img src="${imageBase}1000038200.jpg" alt="Lynux espadrilles lifestyle" fetchpriority="high"></div>
+    <div class="hero-copy"><p class="eyebrow">Handcrafted in South Africa</p><h1>Timeless Style.<br>Effortless Comfort.</h1><p>Handcrafted espadrilles for every step of your journey.</p><div class="hero-actions"><a class="button" href="#shop">Shop the collection <span aria-hidden="true">→</span></a></div></div>
   </section>
-  <div class="ticker" aria-label="Our commitments"><span><i>✳</i> Made to order</span><span><i>✳</i> Handcrafted quality</span><span><i>✳</i> Free defect exchange</span><span><i>✳</i> R65 flat delivery</span></div>
-  <section class="featured-section container"><div class="section-heading"><p class="eyebrow">Curated for you</p><h2>Made for every day</h2><p>Handcrafted with love, designed for you</p></div><div class="product-grid">${products.slice(0, 4).map(card).join("")}</div><div class="view-all"><a class="text-link" href="#shop">Explore all 11 styles <span aria-hidden="true">→</span></a></div></section>
-  <section class="story-band" id="story"><div class="story-image"><img src="${imageBase}the-lynux-6.jpg" alt="Lynux handmade espadrilles" loading="lazy" decoding="async"></div><div class="story-copy"><p class="eyebrow">Our story · Est. 2020</p><h2>Crafted with heart and sole.</h2><p>Founded in 2020, Lynux Espadrilles is a South African luxury footwear brand dedicated to the art of handcrafted espadrilles. Each pair is made to order, reflecting our commitment to quality and individuality.</p><p>Inspired by the timeless elegance of French and Spanish shoe-making traditions, we bring Mediterranean craftsmanship to South Africa. Our designs blend classic espadrille style with modern comfort.</p><a class="text-link" href="https://lynuxespadrilles.co.za/about/" target="_blank" rel="noreferrer">More about Lynux <span aria-hidden="true">↗</span></a><div class="story-note">Luxury, comfort, customisable</div></div></section>
-  <section class="journal-section container"><div class="section-heading"><p class="eyebrow">Follow our journey</p><h2>Every step, a story.</h2><p>Find us on Instagram <a class="text-link" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer">@lynux_espadrille ↗</a></p></div><div class="journal-grid"><div class="journal-item"><img src="${imageBase}the-lynux-7.jpg" alt="Lynux lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View Lynux on Instagram"><span>View on Instagram ↗</span></a></div><div class="journal-item"><img src="${imageBase}the-mule-3.jpg" alt="The Mule lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View The Mule on Instagram"><span>Made to order</span></a></div><div class="journal-item"><img src="${imageBase}the-mule-4.jpg" alt="Lynux espadrille details" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux on Instagram"><span>Handcrafted in SA</span></a></div></div></section>`;
+  <div class="ticker" aria-label="Our commitments"><span><i>◇</i> Handcrafted with care</span><span><i>↗</i> R65 flat-rate delivery</span><span><i>↻</i> Free defect exchanges</span></div>
+  <section class="featured-section container"><div class="section-heading"><h2>Our Collection</h2></div><div class="product-grid">${products.slice(0, 4).map(product => card(product, true)).join("")}</div><div class="view-all"><a class="button button-outline" href="#shop">View all styles <span aria-hidden="true">→</span></a></div></section>
+  <section class="story-band" id="story"><div class="story-image"><img src="${imageBase}the-mule-3.jpg" alt="Lynux handmade espadrille detail" loading="lazy" decoding="async"></div><div class="story-copy"><p class="eyebrow">Our story · Est. 2020</p><h2>Our Story</h2><p>Lynux Espadrilles is a celebration of timeless craftsmanship, inspired by French and Spanish heritage. Our shoes are designed for the modern woman who values style, comfort and quality.</p><a class="button button-outline" href="https://lynuxespadrilles.co.za/about/" target="_blank" rel="noreferrer">Learn more <span aria-hidden="true">→</span></a></div></section>
+  <section class="journal-section"><div class="journal-inner container"><div class="journal-title"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux Espadrilles on Instagram"><span class="instagram-icon" aria-hidden="true">◎</span><span>Follow us on Instagram</span></a></div><div class="journal-grid"><div class="journal-item"><img src="${imageBase}the-lynux-7.jpg" alt="Lynux lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View Lynux on Instagram"></a></div><div class="journal-item"><img src="${imageBase}the-mule-3.jpg" alt="The Mule lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View The Mule on Instagram"></a></div><div class="journal-item"><img src="${imageBase}the-mule-4.jpg" alt="Lynux espadrille details" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux on Instagram"></a></div><div class="journal-item journal-extra"><img src="${imageBase}the-lynux-6.jpg" alt="Lynux handcrafted espadrilles" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="More Lynux on Instagram"></a></div></div><a class="journal-next" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="See more on Instagram">→</a></div></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "home"));
 }
 
 function renderShop() {
-  app.innerHTML = `<section class="collection-intro container"><p class="eyebrow">Lynux collection</p><h1 class="page-title">The Collection</h1><p>11 styles, all handcrafted to order</p></section>
+  app.innerHTML = `<section class="collection-intro"><div class="container"><h1 class="page-title">Shop Our Collection</h1><p>Find your perfect pair</p></div></section>
     <section class="container"><div class="shop-toolbar"><div class="filter-tabs" role="group" aria-label="Filter by category">${["All styles", "Sandals", "Slippers", "Leather"].map(filter => `<button class="filter-button" data-filter="${filter}" aria-pressed="${activeFilter === filter}">${filter}</button>`).join("")}</div><div class="shop-controls"><span class="shop-count" id="shop-count"></span><label for="sort-products">Sort</label><select id="sort-products" aria-label="Sort products"><option value="featured">Featured</option><option value="price-low">Price: low to high</option><option value="price-high">Price: high to low</option><option value="name">Name: A to Z</option></select></div></div><div class="shop-results"><div class="product-grid" id="shop-grid"></div></div></section>`;
   const sort = document.querySelector("#sort-products");
   sort.value = activeSort;
@@ -118,7 +118,7 @@ function renderProduct(slug) {
       <div class="product-actions"><button class="button" type="button" data-add-cart>Add to bag</button><button class="button button-outline" type="button" data-buy-now>Buy now</button></div>
       <div class="purchase-note"><span>Handcrafted to order</span><span>R65 flat-rate delivery</span><span>Free defect exchange</span></div>
     </div></div>
-    <div class="product-additional"><h2>Made just for you.</h2><p class="review-note">Each pair is handcrafted to order in South Africa. <a class="text-link" href="https://lynuxespadrilles.co.za/returns/" target="_blank" rel="noreferrer">Read returns & exchanges ↗</a></p></div></section>`;
+    <div class="product-additional"><details class="product-accordion"><summary>Description</summary><p>${product.description} ${product.facts.join(" · ")}.</p></details><details class="product-accordion"><summary>Shipping &amp; Returns</summary><p>Flat-rate delivery is R65 across South Africa. Each pair is handcrafted to order. We do not accept returns for change of mind; manufacturing defect exchanges are free and courier costs are covered.</p><a class="text-link" href="https://lynuxespadrilles.co.za/returns/" target="_blank" rel="noreferrer">Full returns information ↗</a></details></div></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "shop"));
   setupProduct(product);
 }
@@ -227,9 +227,11 @@ function route() {
   else if (routeValue === "shop") renderShop();
   else if (routeValue === "cart") renderCart();
   else if (routeValue === "story") renderStory();
+  else if (routeValue === "contact") renderHome();
   else renderHome();
   updateBagCount();
-  window.scrollTo({ top: 0, behavior: "instant" });
+  if (routeValue === "contact") requestAnimationFrame(() => document.querySelector("#contact").scrollIntoView());
+  else window.scrollTo({ top: 0, behavior: "instant" });
 }
 
 document.querySelector("#menu-toggle").addEventListener("click", event => {
