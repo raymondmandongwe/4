@@ -10,8 +10,8 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://lynuxespadrilles.co.za" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=story-7">
-  <script src="app.js?v=story-3" defer></script>
+  <link rel="stylesheet" href="styles.css?v=story-8">
+  <script src="app.js?v=story-7" defer></script>
 </head>
 <body>
   <div class="announcement">Handcrafted to order <span aria-hidden="true">·</span> R65 flat-rate delivery across South Africa</div>
@@ -32,9 +32,12 @@
       <button class="icon-button search-toggle" id="search-toggle" aria-label="Search styles" title="Search">
         <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.8" cy="10.8" r="6.8"></circle><path d="m16 16 4.5 4.5"></path></svg>
       </button>
-      <a class="bag-link" href="#cart" aria-label="Shopping bag, 0 items">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 8.5h13l1 12h-15z"></path><path d="M9 8.5V6a3 3 0 0 1 6 0v2.5"></path></svg>
-        <span class="bag-label">Bag</span><span class="bag-count" id="bag-count">0</span>
+      <a class="liked-link" href="#liked" aria-label="Liked items, 0 items" title="Liked items">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg>
+        <span class="liked-count" id="liked-count" hidden>0</span>
+      </a>
+      <a class="bag-link" href="#cart" aria-label="Go to cart, 0 items">
+        <span class="bag-label">Go to cart</span><span class="bag-count" id="bag-count">0</span>
       </a>
     </div>
   </header>

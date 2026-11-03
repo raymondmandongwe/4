@@ -1,23 +1,39 @@
 const imageBase = "https://lynuxespadrilles.co.za/images/";
 const products = [
-  { slug: "ariana", name: "ARIANA", price: 1099, colors: ["Black", "Ivory", "Mustard", "Navy Stars", "Nude", "Protea Print", "Red", "Rustic"], category: "Sandals", description: "Handcrafted sandal with a beautiful stripe upper and comfortable leather insole.", facts: ["Handcrafted", "Open toe", "Stripe upper", "Leather insole"], soles: ["Flat", "Double", "Medium Wedge Sole", "High Wedge Sole"], image: "ariana.png", gallery: ["ariana.png", "ariana-2.jpg", "ariana-3.jpg", "ariana-4.jpg", "ariana-5.jpg", "ariana-6.jpg", "ariana-new-1.jpg", "ariana-new-2.jpg", "ariana-new-3.jpg"] },
-  { slug: "carnero-slipper", name: "CARNERO SLIPPER", price: 1299, colors: ["Baby Pink", "Cream", "Mustard"], category: "Slippers", description: "Handcrafted 100% sheep wool sandal with a comfortable leather insole.", facts: ["Handcrafted", "100% Sheep wool upper", "Leather insole", "Slipper style"], soles: ["Flat", "Double"], image: "carnero-slipper.jpg", gallery: ["carnero-slipper.jpg", "carnero-slipper-2.jpg", "carnero-slipper-3.jpg", "carnero-slipper-4.jpg", "carnero-slipper-5.jpg"] },
-  { slug: "florencia-cerrada", name: "FLORENCIA CERRADA", price: 1499, colors: ["Black"], category: "Leather", description: "Handcrafted closed toe espadrille with premium leather finish.", facts: ["Handcrafted", "Closed toe", "Premium leather", "Leather insole"], soles: [], image: "florencia-cerrada.jpg", gallery: ["florencia-cerrada.jpg", "florencia-cerrada-2.jpg"] },
-  { slug: "lucia-wedge", name: "LUCIA WEDGE", price: 1299, colors: ["Leopard Print"], category: "Sandals", description: "Handcrafted wedge espadrille with leopard print upper and leather insole.", facts: ["Handcrafted", "Wedge sole", "Leopard print", "Leather insole"], soles: [], image: "lucia-wedge.png", gallery: ["lucia-wedge.png"] },
-  { slug: "renata", name: "RENATA", price: 999, priceMax: 1099, colors: ["Khaki"], category: "Sandals", description: "Handcrafted sandal with a clean, classic upper and leather insole.", facts: ["Handcrafted", "Open toe", "Classic upper", "Leather insole"], soles: ["Flat", "Double"], image: "renata.jpg", gallery: ["renata.jpg"] },
-  { slug: "the-bella", name: "THE BELLA", price: 999, colors: ["Blue", "Green", "Natural", "Orange", "Red"], category: "Sandals", description: "Tie up Gladiator sandal with adjustable string strap and leather insole.", facts: ["Handcrafted", "Gladiator style", "Adjustable string strap", "Leather insole"], soles: [], image: "the-bella.jpg", gallery: ["the-bella.jpg", "the-bella-2.jpg", "the-bella-3.jpg", "the-bella-4.jpg", "the-bella-5.jpg", "the-bella-6.jpg", "the-bella-7.jpg", "the-bella-new-1.jpg", "the-bella-new-2.jpg"] },
-  { slug: "the-lynux", name: "THE LYNUX", price: 1099, colors: ["Black", "Khaki", "Multi-Color", "Navy", "Nude", "Olive"], category: "Sandals", description: "The signature Lynux sandal. Handcrafted with linen upper, bow detail and leather insole. Our most loved style.", facts: ["Handcrafted", "Open toe", "Linen upper", "Bow detail", "Leather insole"], soles: ["Flat", "Double"], image: "the-lynux.png", gallery: ["the-lynux.png", "the-lynux-2.png", "the-lynux-3.jpg", "the-lynux-4.jpg", "the-lynux-5.jpg", "the-lynux-6.jpg", "the-lynux-7.jpg", "the-lynux-8.jpg"] },
-  { slug: "the-mule", name: "THE MULE", price: 1299, colors: ["Leopard Print", "Brown", "Black"], category: "Leather", description: "Handcrafted open toe mule sandal with leather upper and comfortable leather insole.", facts: ["Handcrafted", "Open toe", "Leather upper", "Leather insole", "Available in black and brown"], soles: ["Flat", "Double"], toeStyles: ["Open Toe", "Closed Toe"], image: "the-mule-new-5.jpg", gallery: ["the-mule-new-5.jpg", "the-mule.webp", "the-mule-new-2.jpg", "the-mule-2.jpg", "the-mule-3.jpg", "the-mule-new-4.jpg", "the-mule-new-1.jpg", "the-mule-4.jpg", "the-mule-new-3.jpg", "the-mule-5.webp"] },
-  { slug: "the-tina", name: "THE TINA", price: 1099, colors: ["Black", "Ivory"], category: "Sandals", description: "Handcrafted sandal with cotton upper, adjustable ankle strap and leather insole.", facts: ["Handcrafted", "Cotton upper", "Adjustable ankle strap", "Leather insole"], soles: ["Flat", "Double", "Low Wedge Sole", "Medium Wedge Sole", "High Wedge Sole"], image: "the-tina.jpg", gallery: ["the-tina.jpg", "the-tina-2.jpg", "the-tina-3.jpg", "the-tina-4.jpg"] },
-  { slug: "valeria", name: "VALERIA", price: 1099, colors: ["Baby Pink", "Khaki", "Multi-Color", "Nude", "Olive", "Orange", "White"], category: "Sandals", description: "Handcrafted sandal with adjustable string strap and leather insole.", facts: ["Handcrafted", "Adjustable string strap", "Leather insole"], soles: ["Flat", "Double"], image: "valeria.png", gallery: ["valeria.png", "valeria-orange.png", "valeria-new-4.jpg", "valeria-new-1.jpg", "valeria-2.jpg", "valeria-3.jpg", "valeria-4.jpg", "valeria-5.jpg", "valeria-6.jpg", "valeria-new-2.jpg", "valeria-new-3.jpg"] },
-  { slug: "ximera-leather", name: "XIMERA LEATHER", price: 1299, colors: ["Tan"], category: "Leather", description: "Handcrafted leather espadrille with premium finish and comfortable leather insole.", facts: ["Handcrafted", "Premium leather upper", "Leather insole"], soles: ["Flat", "Double", "Medium Wedge Sole", "High Wedge Sole"], image: "ximera-leather.jpg", gallery: ["ximera-leather.jpg"] }
+  { slug: "ariana", name: "ARIANA", price: 1099, colors: ["Black", "Ivory", "Mustard", "Navy Stars", "Nude", "Protea Print", "Red", "Rustic"], category: "Sandals", description: "Handcrafted sandal with a beautiful stripe upper and comfortable leather insole.", facts: ["Handcrafted", "Open toe", "Stripe upper", "Leather insole"], soles: ["Flat", "Double", "Medium Wedge Sole", "High Wedge Sole"], image: "ariana.png" },
+  { slug: "carnero-slipper", name: "CARNERO SLIPPER", price: 1299, colors: ["Baby Pink", "Cream", "Mustard"], category: "Slippers", description: "Handcrafted 100% sheep wool sandal with a comfortable leather insole.", facts: ["Handcrafted", "100% Sheep wool upper", "Leather insole", "Slipper style"], soles: ["Flat", "Double"], image: "carnero-slipper.jpg" },
+  { slug: "florencia-cerrada", name: "FLORENCIA CERRADA", price: 1499, colors: ["Black"], category: "Leather", description: "Handcrafted closed toe espadrille with premium leather finish.", facts: ["Handcrafted", "Closed toe", "Premium leather", "Leather insole"], soles: [], image: "florencia-cerrada.jpg" },
+  { slug: "lucia-wedge", name: "LUCIA WEDGE", price: 1299, colors: ["Leopard Print"], category: "Sandals", description: "Handcrafted wedge espadrille with leopard print upper and leather insole.", facts: ["Handcrafted", "Wedge sole", "Leopard print", "Leather insole"], soles: [], image: "lucia-wedge.png" },
+  { slug: "renata", name: "RENATA", price: 999, priceMax: 1099, colors: ["Khaki"], category: "Sandals", description: "Handcrafted sandal with a clean, classic upper and leather insole.", facts: ["Handcrafted", "Open toe", "Classic upper", "Leather insole"], soles: ["Flat", "Double"], image: "renata.jpg" },
+  { slug: "the-bella", name: "THE BELLA", price: 999, colors: ["Blue", "Green", "Natural", "Orange", "Red"], category: "Sandals", description: "Tie up Gladiator sandal with adjustable string strap and leather insole.", facts: ["Handcrafted", "Gladiator style", "Adjustable string strap", "Leather insole"], soles: [], image: "the-bella.jpg" },
+  { slug: "the-lynux", name: "THE LYNUX", price: 1099, colors: ["Black", "Khaki", "Multi-Color", "Navy", "Nude", "Olive"], category: "Sandals", description: "The signature Lynux sandal. Handcrafted with linen upper, bow detail and leather insole. Our most loved style.", facts: ["Handcrafted", "Open toe", "Linen upper", "Bow detail", "Leather insole"], soles: ["Flat", "Double"], image: "the-lynux.png" },
+  { slug: "the-mule", name: "THE MULE", price: 1299, colors: ["Leopard Print", "Brown", "Black"], category: "Leather", description: "Handcrafted open toe mule sandal with leather upper and comfortable leather insole.", facts: ["Handcrafted", "Open toe", "Leather upper", "Leather insole", "Available in black and brown"], soles: ["Flat", "Double"], toeStyles: ["Open Toe", "Closed Toe"], image: "the-mule-new-5.jpg" },
+  { slug: "the-tina", name: "THE TINA", price: 1099, colors: ["Black", "Ivory"], category: "Sandals", description: "Handcrafted sandal with cotton upper, adjustable ankle strap and leather insole.", facts: ["Handcrafted", "Cotton upper", "Adjustable ankle strap", "Leather insole"], soles: ["Flat", "Double", "Low Wedge Sole", "Medium Wedge Sole", "High Wedge Sole"], image: "the-tina.jpg" },
+  { slug: "valeria", name: "VALERIA", price: 1099, colors: ["Baby Pink", "Khaki", "Multi-Color", "Nude", "Olive", "Orange", "White"], category: "Sandals", description: "Handcrafted sandal with adjustable string strap and leather insole.", facts: ["Handcrafted", "Adjustable string strap", "Leather insole"], soles: ["Flat", "Double"], image: "valeria.png" },
+  { slug: "ximera-leather", name: "XIMERA LEATHER", price: 1299, colors: ["Tan"], category: "Leather", description: "Handcrafted leather espadrille with premium finish and comfortable leather insole.", facts: ["Handcrafted", "Premium leather upper", "Leather insole"], soles: ["Flat", "Double", "Medium Wedge Sole", "High Wedge Sole"], image: "ximera-leather.jpg" }
 ];
+
+const colorImages = {
+  "ariana": { Black: "ariana-5.jpg", Ivory: "ariana-2.jpg", Mustard: "ariana.png", "Navy Stars": "ariana-new-3.jpg", Nude: "ariana-6.jpg", "Protea Print": "ariana-new-1.jpg", Red: "lucia-wedge-2.png", Rustic: "ariana-3.jpg" },
+  "carnero-slipper": { "Baby Pink": "carnero-slipper-2.jpg", Cream: "carnero-slipper-5.jpg", Mustard: "carnero-slipper.jpg" },
+  "florencia-cerrada": { Black: "florencia-cerrada.jpg" },
+  "lucia-wedge": { "Leopard Print": "lucia-wedge.png" },
+  "renata": { Khaki: "renata.jpg" },
+  "the-bella": { Blue: "the-bella-5.jpg", Green: "the-bella-2.jpg", Natural: "the-bella-new-1.jpg", Orange: "the-bella-7.jpg", Red: "the-bella.jpg" },
+  "the-lynux": { Black: "the-lynux-3.jpg", Khaki: "the-lynux-6.jpg", "Multi-Color": "the-lynux.png", Navy: "the-lynux-7.jpg", Nude: "the-lynux-4.jpg", Olive: "the-lynux-5.jpg" },
+  "the-mule": { "Leopard Print": "the-mule-new-5.jpg", Brown: "the-mule-new-2.jpg", Black: "the-mule-new-1.jpg" },
+  "the-tina": { Black: "the-tina-2.jpg", Ivory: "the-tina-3.jpg" },
+  "valeria": { "Baby Pink": "valeria-6.jpg", Khaki: "valeria-2.jpg", "Multi-Color": "valeria.png", Nude: "valeria-new-3.jpg", Olive: "valeria-5.jpg", Orange: "valeria-new-4.jpg", White: "valeria-3.jpg" },
+  "ximera-leather": { Tan: "ximera-leather.jpg" }
+};
 
 const formatPrice = value => `R${Number(value).toLocaleString("en-US", { minimumFractionDigits: 2, maximumFractionDigits: 2 })}`;
 const productBySlug = slug => products.find(product => product.slug === slug);
 const app = document.querySelector("#app");
 const cartKey = "lynux-preview-cart-v1";
 let cart = readCart();
+const likedKey = "lynux-preview-liked-v1";
+let liked = readLiked();
 let activeFilter = "All styles";
 let activeSearch = "";
 let activeSort = "featured";
@@ -32,12 +48,49 @@ function saveCart() {
   updateBagCount();
 }
 
+function readLiked() {
+  try { return JSON.parse(localStorage.getItem(likedKey) || "[]"); }
+  catch { return []; }
+}
+
+function toggleLiked(slug) {
+  liked = liked.includes(slug) ? liked.filter(item => item !== slug) : [...liked, slug];
+  try { localStorage.setItem(likedKey, JSON.stringify(liked)); } catch {}
+  updateLikedCount();
+  document.querySelectorAll(`[data-like="${slug}"]`).forEach(button => setLikeButton(button, slug));
+  if (location.hash === "#liked") renderLiked();
+}
+
+function setLikeButton(button, slug) {
+  const isLiked = liked.includes(slug);
+  const name = productBySlug(slug).name;
+  button.setAttribute("aria-pressed", String(isLiked));
+  button.setAttribute("aria-label", `${isLiked ? "Remove" : "Add"} ${name} ${isLiked ? "from" : "to"} liked items`);
+}
+
+function likeButton(product, extraClass = "") {
+  return `<button class="like-button ${extraClass}" type="button" data-like="${product.slug}" aria-pressed="${liked.includes(product.slug)}" aria-label="${liked.includes(product.slug) ? "Remove" : "Add"} ${product.name} ${liked.includes(product.slug) ? "from" : "to"} liked items"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7.5-4.6-7.5-10.2A4.3 4.3 0 0 1 12 7.3a4.3 4.3 0 0 1 7.5 2.5C19.5 15.4 12 20 12 20z"></path></svg></button>`;
+}
+
+function updateLikedCount() {
+  const count = liked.length;
+  document.querySelector("#liked-count").textContent = count;
+  document.querySelector("#liked-count").hidden = count === 0;
+  document.querySelector(".liked-link").setAttribute("aria-label", `Liked items, ${count} ${count === 1 ? "item" : "items"}`);
+}
+
+function renderLiked() {
+  const items = liked.map(productBySlug).filter(Boolean);
+  app.innerHTML = `<section class="cart-page container"><p class="eyebrow">Your favourites</p><h1 class="page-title">Liked items${items.length ? ` <span class="shop-count">(${items.length} ${items.length === 1 ? "style" : "styles"})</span>` : ""}</h1>${items.length ? `<div class="product-grid">${items.map(product => card(product)).join("")}</div>` : `<div class="empty-cart"><p>You haven’t liked any styles yet. Tap the heart on a style to save it here.</p><a class="button" href="#shop">Discover the collection</a></div>`}</section>`;
+  document.querySelectorAll("[data-nav]").forEach(link => link.classList.remove("is-active"));
+}
+
 function cartCount() { return cart.reduce((total, item) => total + item.quantity, 0); }
 
 function updateBagCount() {
   const count = cartCount();
   document.querySelector("#bag-count").textContent = count;
-  document.querySelector(".bag-link").setAttribute("aria-label", `Shopping bag, ${count} ${count === 1 ? "item" : "items"}`);
+  document.querySelector(".bag-link").setAttribute("aria-label", `Go to cart, ${count} ${count === 1 ? "item" : "items"}`);
 }
 
 function card(product, prioritizeImage = false) {
@@ -47,6 +100,7 @@ function card(product, prioritizeImage = false) {
       <img src="${imageBase}${product.image}" alt="${product.name}" loading="${prioritizeImage ? "eager" : "lazy"}" decoding="async"${prioritizeImage ? " fetchpriority=\"high\"" : ""}>
       <span class="image-label">View the style</span>
     </a>
+    ${likeButton(product, "card-like")}
     <div class="product-meta"><div><h3>${product.name}</h3><p>${priceLabel(product)}</p></div><div class="swatch-dots" aria-label="${product.colors.length} ${product.colors.length === 1 ? "colour" : "colours"}">${colors}</div></div>
   </article>`;
 }
@@ -71,7 +125,7 @@ function renderHome() {
   </section>
   <div class="ticker" aria-label="Our commitments"><span><i>◇</i> Handcrafted with care</span><span><i>↗</i> R65 flat-rate delivery</span><span><i>↻</i> Free defect exchanges</span></div>
   <section class="featured-section container"><div class="section-heading"><h2>Our Collection</h2></div><div class="product-grid">${products.slice(0, 4).map(product => card(product, true)).join("")}</div><div class="view-all"><a class="button button-outline" href="#shop">View all styles <span aria-hidden="true">→</span></a></div></section>
-  <section class="journal-section"><div class="journal-inner container"><div class="journal-title"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux Espadrilles on Instagram"><span class="instagram-icon" aria-hidden="true">◎</span><span>Follow us on Instagram</span></a></div><div class="journal-grid"><div class="journal-item"><img src="${imageBase}the-lynux-7.jpg" alt="Lynux lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View Lynux on Instagram"></a></div><div class="journal-item"><img src="${imageBase}the-mule-3.jpg" alt="The Mule lifestyle" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View The Mule on Instagram"></a></div><div class="journal-item"><img src="${imageBase}the-mule-4.jpg" alt="Lynux espadrille details" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux on Instagram"></a></div><div class="journal-item journal-extra"><img src="${imageBase}the-lynux-6.jpg" alt="Lynux handcrafted espadrilles" loading="lazy"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="More Lynux on Instagram"></a></div></div><a class="journal-next" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="See more on Instagram">→</a></div></section>`;
+  <section class="journal-section"><div class="journal-inner container"><div class="journal-title"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux Espadrilles on Instagram"><span class="instagram-icon" aria-hidden="true">◎</span><span>Follow us on Instagram</span></a></div><div class="journal-grid"><div class="journal-item"><img src="instagram-images/1-sunhat.jpg" alt="Lynux espadrilles with a straw sunhat and sunglasses" loading="lazy" style="object-position: 55% 65%"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View Lynux on Instagram"></a></div><div class="journal-item"><img src="instagram-images/2-chair.jpg" alt="Beige bow espadrilles worn while sitting on an outdoor chair" loading="lazy" style="object-position: center 68%"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="View The Mule on Instagram"></a></div><div class="journal-item"><img src="instagram-images/3-marina.jpg" alt="Model wearing Lynux espadrilles at the marina" loading="lazy" style="object-position: center 30%"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="Follow Lynux on Instagram"></a></div><div class="journal-item journal-extra"><img src="instagram-images/4-decking.jpg" alt="Brown leather espadrilles on wooden decking" loading="lazy" style="object-position: center 55%"><a href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="More Lynux on Instagram"></a></div></div><a class="journal-next" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer" aria-label="See more on Instagram">→</a></div></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "home"));
 }
 
@@ -104,10 +158,12 @@ function updateShopGrid() {
 function renderProduct(slug) {
   const product = productBySlug(slug);
   if (!product) { renderNotFound(); return; }
-  const gallery = product.gallery?.length ? product.gallery : [product.image];
+  const gallery = [...new Set(Object.values(colorImages[product.slug] || {}))];
+  if (!gallery.length) gallery.push(product.image);
+  const mainImage = gallery.includes(product.image) ? product.image : gallery[0];
   app.innerHTML = `<section class="product-page container"><nav class="breadcrumbs" aria-label="Breadcrumb"><a href="#home">Home</a><span>/</span><a href="#shop">The Collection</a><span>/</span><span>${product.name}</span></nav>
-    <div class="product-layout"><div class="product-gallery"><div class="gallery-thumbs" aria-label="Product images">${gallery.map((image, index) => `<button class="gallery-thumb" data-gallery-image="${image}" aria-label="View ${product.name} image ${index + 1}" aria-current="${index === 0}"><img src="${imageBase}${image}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery-main"><img id="main-product-image" src="${imageBase}${product.image}" alt="${product.name}" fetchpriority="high"></div></div>
-    <div class="product-info"><p class="eyebrow">Lynux collection</p><h1>${product.name}</h1><p class="product-price">${priceLabel(product)}</p><hr style="border:0;border-top:1px solid var(--line)"><p class="product-description">${product.description}</p><ul class="product-facts">${product.facts.map(fact => `<li>${fact}</li>`).join("")}</ul>
+    <div class="product-layout"><div class="product-gallery"><div class="gallery-thumbs" aria-label="Product images">${gallery.map((image, index) => `<button class="gallery-thumb" data-gallery-image="${image}" aria-label="View ${product.name} image ${index + 1}" aria-current="${image === mainImage}"><img src="${imageBase}${image}" alt="" loading="lazy"></button>`).join("")}</div><div class="gallery-main"><img id="main-product-image" src="${imageBase}${mainImage}" alt="${product.name}" fetchpriority="high"></div></div>
+    <div class="product-info"><p class="eyebrow">Lynux collection</p><div class="product-title-row"><h1>${product.name}</h1>${likeButton(product, "product-like")}</div><p class="product-price">${priceLabel(product)}</p><hr style="border:0;border-top:1px solid var(--line)"><p class="product-description">${product.description}</p><ul class="product-facts">${product.facts.map(fact => `<li>${fact}</li>`).join("")}</ul>
       <div class="option-group"><div class="option-heading"><span>Size</span><button type="button" data-size-guide>View size guide</button></div><div class="option-row" data-option-group="size">${[3, 4, 5, 6, 7, 8, 9].map(size => `<button class="option-chip" type="button" data-value="${size}" aria-pressed="false">${size}</button>`).join("")}</div></div>
       ${product.soles.length ? `<div class="option-group"><div class="option-heading"><span>Sole style</span></div><div class="option-row" data-option-group="sole">${product.soles.map(sole => `<button class="option-chip" type="button" data-value="${sole}" aria-pressed="false">${sole}</button>`).join("")}</div></div>` : ""}
       ${product.toeStyles ? `<div class="option-group"><div class="option-heading"><span>Toe style</span></div><div class="option-row" data-option-group="toe">${product.toeStyles.map(style => `<button class="option-chip" type="button" data-value="${style}" aria-pressed="false">${style}</button>`).join("")}</div></div>` : ""}
@@ -130,13 +186,14 @@ function setupProduct(product) {
     if (!button) return;
     group.querySelectorAll("[data-value]").forEach(option => option.setAttribute("aria-pressed", String(option === button)));
     choices[group.dataset.optionGroup] = button.dataset.value;
-    if (group.dataset.optionGroup === "color") document.querySelector("#selected-color").textContent = button.dataset.value;
+    if (group.dataset.optionGroup === "color") {
+      document.querySelector("#selected-color").textContent = button.dataset.value;
+      const image = colorImages[product.slug]?.[button.dataset.value];
+      if (image) showGalleryImage(image, `${product.name} in ${button.dataset.value}`);
+    }
     updateSelectionError(product, choices);
   }));
-  document.querySelectorAll("[data-gallery-image]").forEach(button => button.addEventListener("click", () => {
-    document.querySelector("#main-product-image").src = imageBase + button.dataset.galleryImage;
-    document.querySelectorAll("[data-gallery-image]").forEach(item => item.setAttribute("aria-current", String(item === button)));
-  }));
+  document.querySelectorAll("[data-gallery-image]").forEach(button => button.addEventListener("click", () => showGalleryImage(button.dataset.galleryImage, product.name)));
   document.querySelectorAll("[data-quantity]").forEach(button => button.addEventListener("click", () => {
     quantity = Math.max(1, quantity + (button.dataset.quantity === "plus" ? 1 : -1));
     document.querySelector("#product-quantity").textContent = quantity;
@@ -146,6 +203,13 @@ function setupProduct(product) {
   const buyButton = document.querySelector("[data-buy-now]");
   addButton.addEventListener("click", () => addProduct(product, choices, quantity, false));
   buyButton.addEventListener("click", () => addProduct(product, choices, quantity, true));
+}
+
+function showGalleryImage(image, alt) {
+  const main = document.querySelector("#main-product-image");
+  main.src = imageBase + image;
+  main.alt = alt;
+  document.querySelectorAll("[data-gallery-image]").forEach(item => item.setAttribute("aria-current", String(item.dataset.galleryImage === image)));
 }
 
 function updateSelectionError(product, choices) {
@@ -214,7 +278,7 @@ function renderStory() {
 function renderContact() {
   app.innerHTML = `<section class="collection-intro"><div class="container"><h1 class="page-title">Get in touch</h1><p>Contact Lynux Espadrilles</p></div></section>
     <section class="contact-page container"><div class="contact-copy"><p class="eyebrow">Contact</p><h2>We’re here to help.</h2><p>For questions about a style, an order, or an exchange, contact Lynux through one of the channels below.</p><a class="button" href="mailto:info@lynuxespadrilles.co.za">Email Lynux <span aria-hidden="true">→</span></a></div>
-      <div class="contact-methods"><a class="contact-method" href="mailto:info@lynuxespadrilles.co.za"><span class="contact-label">Email</span><span>info@lynuxespadrilles.co.za</span><span aria-hidden="true">↗</span></a><a class="contact-method" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer"><span class="contact-label">Instagram</span><span>@lynux_espadrille</span><span aria-hidden="true">↗</span></a><a class="contact-method" href="https://wa.me/27786678552" target="_blank" rel="noreferrer"><span class="contact-label">WhatsApp</span><span>Chat with us</span><span aria-hidden="true">↗</span></a>
+      <div class="contact-methods"><a class="contact-method" href="mailto:info@lynuxespadrilles.co.za"><span class="contact-label">Email</span><span>info@lynuxespadrilles.co.za</span><span aria-hidden="true">↗</span></a><a class="contact-method" href="https://instagram.com/lynux_espadrille" target="_blank" rel="noreferrer"><span class="contact-label">Instagram</span><span>@lynux_espadrille</span><span aria-hidden="true">↗</span></a>
         <div class="contact-service"><span class="contact-label">Delivery</span><strong>R65 flat-rate delivery</strong><span>South Africa</span></div><div class="contact-service"><span class="contact-label">Returns &amp; exchanges</span><span>Free exchange for manufacturing defects.</span><a class="text-link" href="https://lynuxespadrilles.co.za/returns/" target="_blank" rel="noreferrer">Read the policy ↗</a></div></div></section>`;
   document.querySelectorAll("[data-nav]").forEach(link => link.classList.toggle("is-active", link.dataset.nav === "contact"));
 }
@@ -237,10 +301,12 @@ function route() {
   if (routeValue.startsWith("product/")) renderProduct(routeValue.split("/")[1]);
   else if (routeValue === "shop") renderShop();
   else if (routeValue === "cart") renderCart();
+  else if (routeValue === "liked") renderLiked();
   else if (routeValue === "story") renderStory();
   else if (routeValue === "contact") renderContact();
   else renderHome();
   updateBagCount();
+  updateLikedCount();
   window.scrollTo({ top: 0, behavior: "instant" });
 }
 
@@ -261,5 +327,9 @@ document.querySelector("#site-search").addEventListener("input", event => {
   else updateShopGrid();
 });
 document.querySelector(".dialog-close").addEventListener("click", () => document.querySelector("#size-dialog").close());
+document.addEventListener("click", event => {
+  const button = event.target.closest("[data-like]");
+  if (button) toggleLiked(button.dataset.like);
+});
 window.addEventListener("hashchange", route);
 route();
