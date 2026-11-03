@@ -362,7 +362,7 @@ main { min-height: 55vh; }
 .journal-item a { z-index: 1; }
 .journal-item span { display: none; }
 .journal-next { display: grid; place-items: center; width: 32px; height: 32px; border: 1px solid #f9f2ec; border-radius: 50%; font-size: 17px; }
-.collection-intro { width: 100%; padding: 25px 0 23px; background: linear-gradient(rgba(226,204,190,.65), rgba(226,204,190,.65)), url("https://lynuxespadrilles.co.za/images/1000038200.jpg") center 48% / cover; text-align: center; }
+.collection-intro { width: 100%; padding: 25px 0 23px; background: linear-gradient(rgba(226,204,190,.65), rgba(226,204,190,.65)), url("redesing-reference/shopcollectionchange/Sunlit Ivory Bougainvillea Shadows.png") center 48% / cover; text-align: center; }
 .collection-intro .page-title { font-size: 39px; }
 .collection-intro > .container > p { margin: 1px 0 0; color: var(--ink); font-size: 12px; }
 .collection-intro .eyebrow { display: none; }
